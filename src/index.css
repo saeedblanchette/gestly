@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@tailwind reference;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-white rounded-xl p-6 border border-solid hover:shadow-lg transition-shadow;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-midnight to-[#0A5160] text-white rounded-xl font-bold hover:shadow-lg hover:shadow-midnight/20 transition-all;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white border-2 border-solid rounded-xl font-bold hover:bg-offwhite transition-colors;
+  }
+}
+
+@layer utilities {
+  .rtl { direction: rtl; }
+  .ltr { direction: ltr; }
+}
