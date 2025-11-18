@@ -553,7 +553,7 @@ export default function GeneGuestLanding() {
 {/* Preview Section — AI Ads Agent (Gold style, multilingual, no images) */}
 <section id="preview" className="py-24" data-animate aria-labelledby="preview-title">
   <div className={`${isVisible.preview ? 'animate-in' : 'opacity-0'}`}>
- <h3   className={`text-xl font-bold mb-8 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
+ <h3   className={`text-xl font-bold text-center mb-8 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
             {t.ads.subtitle}
           </h3>
     
