@@ -392,29 +392,20 @@ export default function GeneGuestLanding() {
             </div>
             
             {/* Hero Visual */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-3xl p-8 border border-slate-200 shadow-2xl">
-                <svg width="100%" height="320" viewBox="0 0 800 480" className="w-full h-auto">
-                  <defs>
-                    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#f8fbff"/>
-                      <stop offset="1" stopColor="#fff"/>
-                    </linearGradient>
-                  </defs>
-                  <rect x="0" y="0" width="800" height="480" rx="16" fill="url(#g)" />
-                  <g transform="translate(40,36)">
-                    <rect x="0" y="0" width="720" height="408" rx="12" fill="#fff" stroke="#E4E7EB"/>
-                    <circle cx="120" cy="80" r="32" fill="#AEE8D4" style={{animation: 'float 3s ease-in-out infinite'}} />
-                    <circle cx="260" cy="80" r="32" fill="#FF7A59" style={{animation: 'float 3.5s ease-in-out infinite'}} />
-                    <circle cx="400" cy="80" r="32" fill="#AEE8D4" style={{animation: 'float 4s ease-in-out infinite'}} />
-                    <rect x="80" y="180" width="140" height="80" rx="12" fill="#EDE8E3" />
-                    <rect x="240" y="180" width="140" height="80" rx="12" fill="#EDE8E3" />
-                    <rect x="400" y="180" width="140" height="80" rx="12" fill="#EDE8E3" />
-                    <path d="M160 112 C200 140, 320 160, 380 120" stroke="#043B4C" strokeWidth="2" fill="none" strokeOpacity="0.12"/>
-                  </g>
-                </svg>
+              <div className="relative">
+                <div className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-3xl p-6 border border-slate-200 shadow-2xl">
+                  <img
+                    src="./reservation_preview.png"
+                    alt="AI-powered reservation dashboard preview"
+                    className="w-full h-auto rounded-2xl shadow-md"
+                  />
+                </div>
+
+                {/* Floating decorative bubbles */}
+                <div className="absolute -top-6 -left-6 w-10 h-10 bg-[#6EE7B7] rounded-full opacity-70 blur-sm" />
+                <div className="absolute -bottom-6 -right-10 w-14 h-14 bg-[#A5F3FC] rounded-full opacity-60 blur-sm" />
+                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-[#FCA5A5] rounded-full opacity-70 blur-[2px]" />
               </div>
-            </div>
           </div>
         </section>
 
