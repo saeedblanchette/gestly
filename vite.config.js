@@ -6,16 +6,16 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 export default defineConfig({
   plugins: [react(),tailwindcss(),  ViteImageOptimizer({
       png: {
-        quality: 80,
+        quality: 65,
       },
       jpeg: {
-        quality: 80,
+        quality: 65,
       },
       jpg: {
-        quality: 80,
+        quality: 65,
       },
       webp: {
-        quality: 80,
+        quality: 65,
       },
       svg: {
         multipass: true,
