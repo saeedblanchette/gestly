@@ -429,7 +429,7 @@ export default function GeneGuestLanding() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#043B4C]/10 to-[#AEE8D4]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all" />
               <div className="relative bg-white rounded-3xl p-2 border border-slate-200 shadow-2xl overflow-hidden">
                 <img 
-                  src="data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='600' fill='%23f8fbff'/%3E%3Crect x='40' y='40' width='720' height='80' rx='12' fill='%23043B4C' opacity='0.05'/%3E%3Crect x='40' y='140' width='480' height='400' rx='12' fill='white' stroke='%23E4E7EB'/%3E%3Crect x='540' y='140' width='220' height='190' rx='12' fill='%23AEE8D4' opacity='0.2'/%3E%3Crect x='540' y='350' width='220' height='190' rx='12' fill='%23FF7A59' opacity='0.2'/%3E%3Ctext x='60' y='85' font-family='system-ui' font-size='24' font-weight='600' fill='%23043B4C'%3EDashboard%3C/text%3E%3C/svg%3E"
+                  src="./dashbourd.png"
                   alt={t.platform.imageAlt}
                   className="w-full rounded-2xl"
                 />
@@ -451,7 +451,7 @@ export default function GeneGuestLanding() {
               imageAlt={t.features.f1.imageAlt}
               delay="stagger-1"
               isVisible={isVisible.features}
-              imageSrc="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='300' fill='%23f8fbff'/%3E%3Crect x='20' y='20' width='360' height='50' rx='8' fill='%23043B4C' opacity='0.08'/%3E%3Crect x='20' y='90' width='170' height='190' rx='8' fill='%23AEE8D4' opacity='0.3'/%3E%3Crect x='210' y='90' width='170' height='90' rx='8' fill='%23FF7A59' opacity='0.3'/%3E%3Crect x='210' y='190' width='170' height='90' rx='8' fill='%23EDE8E3'/%3E%3Ctext x='40' y='50' font-family='system-ui' font-size='18' font-weight='600' fill='%23043B4C'%3EReservations%3C/text%3E%3C/svg%3E"
+              imageSrc="./aireservation.png"
             />
             <FeatureCard 
               icon={<Users className="w-8 h-8" />}
