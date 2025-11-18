@@ -460,7 +460,7 @@ export default function GeneGuestLanding() {
               imageAlt={t.features.f2.imageAlt}
               delay="stagger-2"
               isVisible={isVisible.features}
-              imageSrc="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='300' fill='%23f8fbff'/%3E%3Ccircle cx='100' cy='80' r='30' fill='%23AEE8D4'/%3E%3Ccircle cx='200' cy='80' r='30' fill='%23FF7A59'/%3E%3Ccircle cx='300' cy='80' r='30' fill='%23AEE8D4'/%3E%3Crect x='60' y='150' width='80' height='60' rx='8' fill='%23EDE8E3'/%3E%3Crect x='160' y='150' width='80' height='60' rx='8' fill='%23EDE8E3'/%3E%3Crect x='260' y='150' width='80' height='60' rx='8' fill='%23EDE8E3'/%3E%3Ctext x='20' y='260' font-family='system-ui' font-size='18' font-weight='600' fill='%23043B4C'%3ETable Layout%3C/text%3E%3C/svg%3E"
+              imageSrc="./tablas_ai.png"
             />
             <FeatureCard 
               icon={<MessageSquare className="w-8 h-8" />}
@@ -469,7 +469,7 @@ export default function GeneGuestLanding() {
               imageAlt={t.features.f3.imageAlt}
               delay="stagger-3"
               isVisible={isVisible.features}
-              imageSrc="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='300' fill='%23f8fbff'/%3E%3Ccircle cx='70' cy='60' r='35' fill='%23AEE8D4'/%3E%3Crect x='130' y='30' width='250' height='30' rx='6' fill='%23043B4C' opacity='0.08'/%3E%3Crect x='130' y='70' width='200' height='20' rx='4' fill='%23043B4C' opacity='0.05'/%3E%3Crect x='20' y='130' width='360' height='50' rx='8' fill='%23FF7A59' opacity='0.2'/%3E%3Crect x='20' y='190' width='360' height='50' rx='8' fill='%23AEE8D4' opacity='0.2'/%3E%3Ctext x='20' y='270' font-family='system-ui' font-size='18' font-weight='600' fill='%23043B4C'%3EGuest Profile%3C/text%3E%3C/svg%3E"
+              imageSrc="./guestai.png"
             />
             <FeatureCard 
               icon={<BarChart3 className="w-8 h-8" />}
@@ -478,7 +478,7 @@ export default function GeneGuestLanding() {
               imageAlt={t.features.f4.imageAlt}
               delay="stagger-4"
               isVisible={isVisible.features}
-              imageSrc="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='300' fill='%23f8fbff'/%3E%3Cpath d='M40 240 L100 180 L160 200 L220 140 L280 160 L340 100' stroke='%23043B4C' stroke-width='3' fill='none'/%3E%3Cpath d='M40 240 L100 180 L160 200 L220 140 L280 160 L340 100 L340 240 Z' fill='%23AEE8D4' opacity='0.3'/%3E%3Crect x='20' y='20' width='120' height='40' rx='6' fill='%23FF7A59' opacity='0.2'/%3E%3Ctext x='30' y='45' font-family='system-ui' font-size='16' font-weight='600' fill='%23043B4C'%3EPredictive%3C/text%3E%3C/svg%3E"
+              imageSrc="./occupancy_forecast.png"
             />
           </div>
         </section>
