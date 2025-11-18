@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, AlertCircle, UserX, TrendingDown, Brain, Zap, Users, Calendar, CheckCircle, LineChart, Target, Shield, Leaf, ArrowRight, Mail, Play, Globe, ChefHat, ClipboardList, MessageSquare, BarChart3 } from 'lucide-react';
+import { 
+  Sparkles, AlertCircle, UserX, TrendingDown, Brain, Zap, Users, 
+  Calendar, LineChart, Target, ArrowRight, Globe, MessageSquare, 
+  BarChart3, Check, Menu, X 
+} from 'lucide-react';
 
 const translations = {
   en: {
@@ -10,63 +14,54 @@ const translations = {
       signin: 'Sign in'
     },
     hero: {
-      badge: 'Smarter operations for modern restaurants',
+      badge: 'New: AI Marketing Agent v2.0',
       title: 'Run Your Restaurant on Autopilot',
       subtitle: 'Smart reservations, seamless operations, and an AI agent that manages your ads — all in one modern system.',
-      cta1: 'Get Started',
+      cta1: 'Start Free Trial',
       cta2: 'Watch Demo',
-      subtext: 'Built for restaurants of every size.'
+      subtext: 'No credit card required • Cancel anytime'
     },
     problems: {
       title: 'Restaurants Should Not Run on Stress',
-      card1: { title: 'Operational chaos', desc: 'Full books on paper. Empty tables in reality.' },
-      card2: { title: 'No-shows & late changes', desc: 'Last-minute surprises that wreck the floor plan.' },
-      card3: { title: 'Marketing guesswork', desc: 'Money into ads. No clarity on what actually works.' }
+      card1: { title: 'Operational Chaos', desc: 'Full books on paper, but empty tables in reality due to poor management.' },
+      card2: { title: 'No-shows & Changes', desc: 'Last-minute surprises that wreck the floor plan and revenue.' },
+      card3: { title: 'Marketing Guesswork', desc: 'Throwing money into ads with zero clarity on what actually brings guests.' }
     },
     platform: {
       title: 'A Smarter Brain for Your Front of House',
       desc: 'GeneGuest brings reservations, operations, and AI-powered marketing into one clean interface. It works quietly in the background so your team can focus on guests.',
-      imageAlt: 'Modern restaurant dashboard interface showing real-time table management, reservation flow, and guest analytics on a clean, intuitive screen'
+      imageAlt: 'Modern restaurant dashboard'
     },
     features: {
-      title: 'Core Features',
-      f1: { title: 'AI Reservations', desc: 'Accept bookings instantly with automated confirmations and smart reminders.', imageAlt: 'AI-powered reservation calendar with automated booking confirmations and intelligent scheduling system' },
-      f2: { title: 'Smart Table Assignment', desc: 'Let the system choose the optimal seating layout in real time.', imageAlt: 'Interactive restaurant floor plan with AI-suggested table assignments and real-time occupancy visualization' },
-      f3: { title: 'Guest Insights', desc: 'Track visit history, preferences, and engagement.', imageAlt: 'Guest profile dashboard showing visit history, dining preferences, and personalized recommendations' },
-      f4: { title: 'Predictive Occupancy', desc: 'See how busy you will be before service even starts.', imageAlt: 'Predictive analytics graph showing forecasted restaurant occupancy and peak hours for upcoming service' }
+      title: 'Everything You Need',
+      f1: { title: 'AI Reservations', desc: 'Accept bookings instantly with automated confirmations and smart reminders.' },
+      f2: { title: 'Smart Table Assignment', desc: 'Let the system choose the optimal seating layout in real time.' },
+      f3: { title: 'Guest Insights', desc: 'Track visit history, preferences, and engagement automatically.' },
+      f4: { title: 'Predictive Occupancy', desc: 'See how busy you will be before service even starts.' }
     },
     ads: {
-      title: 'AI Ads Agent',
-      subtitle: 'Your restaurant marketer, powered by AI',
-      desc: 'The AI Ads Agent creates, manages, and optimizes your ads automatically — so you always fill the right seats at the right time.',
-      chip1: 'Auto-target audiences',
-      chip2: 'Generate promotions',
-      chip3: 'Optimize campaigns',
-      chip4: 'Weekly summaries',
-      imageAlt: 'AI marketing dashboard showing automated ad campaigns, audience targeting, and performance metrics for restaurant promotions'
+      title: 'Meet Your AI Ads Agent',
+      subtitle: 'Your 24/7 Marketing Expert',
+      desc: 'The AI Ads Agent creates, manages, and optimizes your ads automatically — filling the right seats at the right time.',
+      chip1: 'Auto-Targeting',
+      chip2: 'Creative Gen',
+      chip3: 'ROI Tracking',
+      chip4: 'Weekly Reports',
     },
-  preview: {
-  title: 'AI Ads Agent Highlights',
-  mock1: { 
-    title: 'Smart Audience Targeting',
-    alt: 'AI system automatically choosing ideal customer segments based on restaurant profile and behavior' 
-  },
-  mock2: { 
-    title: 'Auto-Created Campaigns',
-    alt: 'AI generating ready-to-run ads with optimized visuals, copy, and objectives' 
-  },
-  mock3: { 
-    title: 'Real-Time Optimization',
-    alt: 'Live performance dashboard showing automatic bid adjustments and improved ROI' 
-  }
-}
-,
+    preview: {
+      title: 'Why Restaurants Love The AI Agent',
+      goldFeatures: [
+        { title: 'Ultra-Precise Targeting', desc: 'Finds high-intent diners based on real behavior, not just broad demographics.' },
+        { title: 'Auto-Pilot Campaigns', desc: 'Creates ads, tests variations, and shifts budget automatically to what works.' },
+        { title: 'Real Revenue Attribution', desc: 'Track exactly how many dollars each ad generated in actual reservations.' }
+      ]
+    },
     cta: {
-      title: 'Ready to see GeneGuest in action?',
-      desc: 'Be the first to experience the next generation of restaurant management.',
-      placeholder: 'name@email.com',
-      button: 'Join the Waitlist',
-      subtext: 'We respect your inbox — occasional, meaningful updates only.'
+      title: 'Ready to upgrade your operations?',
+      desc: 'Join 500+ modern restaurants using GeneGuest.',
+      placeholder: 'work@restaurant.com',
+      button: 'Get Early Access',
+      subtext: 'Limited spots available for the beta program.'
     },
     footer: {
       terms: 'Terms',
@@ -79,66 +74,57 @@ const translations = {
       features: 'Fonctionnalités',
       ads: 'Pub IA',
       demo: 'Démo',
-      signin: 'Se connecter'
+      signin: 'Connexion'
     },
     hero: {
-      badge: 'Opérations intelligentes pour restaurants modernes',
+      badge: 'Nouveau : Agent Marketing IA v2.0',
       title: 'Gérez Votre Restaurant en Pilote Automatique',
-      subtitle: 'Réservations intelligentes, opérations fluides et un agent IA qui gère vos publicités — tout dans un seul système moderne.',
-      cta1: 'Commencer',
+      subtitle: 'Réservations intelligentes, opérations fluides et un agent IA qui gère vos publicités.',
+      cta1: 'Essai Gratuit',
       cta2: 'Voir la Démo',
-      subtext: 'Conçu pour les restaurants de toutes tailles.'
+      subtext: 'Pas de carte requise • Annulez à tout moment'
     },
     problems: {
       title: 'Les Restaurants ne Devraient pas Fonctionner sous Stress',
       card1: { title: 'Chaos opérationnel', desc: 'Complet sur papier. Tables vides en réalité.' },
       card2: { title: 'Absences & changements', desc: 'Surprises de dernière minute qui ruinent le plan de salle.' },
-      card3: { title: 'Marketing à l aveugle', desc: 'Argent dans les pubs. Aucune clarté sur ce qui fonctionne.' }
+      card3: { title: 'Marketing à l aveugle', desc: 'Argent dans les pubs sans savoir ce qui fonctionne.' }
     },
     platform: {
-      title: 'Un Cerveau Plus Intelligent pour Votre Salle',
-      desc: 'GeneGuest réunit réservations, opérations et marketing IA dans une interface claire. Il travaille discrètement en arrière-plan pour que votre équipe se concentre sur les clients.',
-      imageAlt: 'Interface de tableau de bord de restaurant moderne montrant la gestion des tables en temps réel, le flux de réservations et les analyses des clients'
+      title: 'Un Cerveau Plus Intelligent',
+      desc: 'GeneGuest réunit réservations, opérations et marketing IA dans une interface claire.',
+      imageAlt: 'Interface de tableau de bord'
     },
     features: {
-      title: 'Fonctionnalités Principales',
-      f1: { title: 'Réservations IA', desc: 'Acceptez les réservations instantanément avec confirmations et rappels automatiques.', imageAlt: 'Calendrier de réservation alimenté par IA avec confirmations automatiques et système de planification intelligent' },
-      f2: { title: 'Attribution Intelligente', desc: 'Laissez le système choisir la disposition optimale en temps réel.', imageAlt: 'Plan de salle interactif avec attributions de table suggérées par IA et visualisation d occupation en temps réel' },
-      f3: { title: 'Insights Clients', desc: 'Suivez l historique, préférences et engagement des visites.', imageAlt: 'Tableau de bord de profil client montrant l historique des visites, les préférences culinaires et les recommandations personnalisées' },
-      f4: { title: 'Occupation Prédictive', desc: 'Voyez à quel point vous serez occupé avant même le service.', imageAlt: 'Graphique d analyse prédictive montrant l occupation prévue du restaurant et les heures de pointe pour le service à venir' }
+      title: 'Tout ce dont vous avez besoin',
+      f1: { title: 'Réservations IA', desc: 'Acceptez les réservations avec confirmations automatiques.' },
+      f2: { title: 'Attribution Intelligente', desc: 'Laissez le système choisir la disposition optimale.' },
+      f3: { title: 'Insights Clients', desc: 'Suivez l historique et les préférences des visites.' },
+      f4: { title: 'Occupation Prédictive', desc: 'Voyez à quel point vous serez occupé avant le service.' }
     },
     ads: {
-      title: 'Agent Pub IA',
-      subtitle: 'Votre marketeur de restaurant, propulsé par IA',
-      desc: 'L Agent Pub IA crée, gère et optimise vos publicités automatiquement — pour toujours remplir les bonnes places au bon moment.',
-      chip1: 'Ciblage auto des audiences',
-      chip2: 'Générer des promotions',
-      chip3: 'Optimiser les campagnes',
-      chip4: 'Résumés hebdomadaires',
-      imageAlt: 'Tableau de bord marketing IA montrant les campagnes publicitaires automatisées, le ciblage d audience et les métriques de performance'
+      title: 'Votre Agent Pub IA',
+      subtitle: 'Expert Marketing 24/7',
+      desc: 'L Agent Pub IA crée et optimise vos publicités automatiquement.',
+      chip1: 'Ciblage Auto',
+      chip2: 'Création Pubs',
+      chip3: 'Suivi ROI',
+      chip4: 'Rapports Hebdo',
     },
-preview: {
-  title: 'Points Forts de l’Agent Pub IA',
-  mock1: { 
-    title: 'Ciblage Intelligent des Audiences',
-    alt: 'Système IA sélectionnant automatiquement les segments clients idéaux selon le profil du restaurant' 
-  },
-  mock2: { 
-    title: 'Campagnes Créées Automatiquement',
-    alt: 'IA générant des publicités prêtes à lancer avec visuels et textes optimisés' 
-  },
-  mock3: { 
-    title: 'Optimisation en Temps Réel',
-    alt: 'Tableau de performance montrant les ajustements automatiques et l’amélioration du ROI' 
-  }
-}
-,
+    preview: {
+      title: 'Pourquoi l IA change tout',
+      goldFeatures: [
+        { title: 'Ciblage ultra-précis', desc: 'Identifie les clients à haute intention basés sur le comportement réel.' },
+        { title: 'Campagnes Auto-Pilote', desc: 'Crée et optimise les budgets automatiquement.' },
+        { title: 'Attribution Réelle', desc: 'Mesurez exactement le CA généré par chaque publicité.' }
+      ]
+    },
     cta: {
-      title: 'Prêt à voir GeneGuest en action?',
-      desc: 'Soyez parmi les premiers à découvrir la nouvelle génération de gestion de restaurant.',
-      placeholder: 'nom@email.com',
-      button: 'Rejoindre la Liste',
-      subtext: 'Nous respectons votre boîte mail — mises à jour occasionnelles uniquement.'
+      title: 'Prêt à passer à la vitesse supérieure ?',
+      desc: 'Rejoignez 500+ restaurants modernes.',
+      placeholder: 'pro@restaurant.com',
+      button: 'Accès Anticipé',
+      subtext: 'Places limitées pour le programme bêta.'
     },
     footer: {
       terms: 'Conditions',
@@ -150,67 +136,58 @@ preview: {
     nav: {
       features: 'المميزات',
       ads: 'الإعلانات الذكية',
-      demo: 'العرض التجريبي',
-      signin: 'تسجيل الدخول'
+      demo: 'تجربة',
+      signin: 'دخول'
     },
     hero: {
-      badge: 'عمليات أذكى للمطاعم الحديثة',
+      badge: 'جديد: وكيل التسويق الذكي v2.0',
       title: 'أدر مطعمك بشكل تلقائي',
-      subtitle: 'حجوزات ذكية، عمليات سلسة، ووكيل ذكاء اصطناعي يدير إعلاناتك — كل ذلك في نظام واحد حديث.',
-      cta1: 'ابدأ الآن',
+      subtitle: 'حجوزات ذكية، عمليات سلسة، ووكيل ذكاء اصطناعي يدير إعلاناتك — كل ذلك في نظام واحد.',
+      cta1: 'ابدأ مجاناً',
       cta2: 'شاهد العرض',
-      subtext: 'مصمم للمطاعم من جميع الأحجام.'
+      subtext: 'لا تتطلب بطاقة ائتمان • إلغاء في أي وقت'
     },
     problems: {
-      title: 'المطاعم لا يجب أن تعمل تحت الضغط',
-      card1: { title: 'فوضى تشغيلية', desc: 'حجوزات ممتلئة على الورق. طاولات فارغة في الواقع.' },
-      card2: { title: 'الغياب والتغييرات', desc: 'مفاجآت اللحظة الأخيرة التي تدمر خطة الصالة.' },
-      card3: { title: 'تسويق عشوائي', desc: 'أموال في الإعلانات. لا وضوح حول ما ينجح فعلاً.' }
+      title: 'وداعاً لضغط العمل',
+      card1: { title: 'فوضى التشغيل', desc: 'حجوزات ممتلئة على الورق، وطاولات فارغة في الواقع.' },
+      card2: { title: 'المفاجآت', desc: 'تغييرات اللحظة الأخيرة التي تدمر خطة توزيع الطاولات.' },
+      card3: { title: 'تسويق عشوائي', desc: 'صرف أموال في الإعلانات دون معرفة العائد الحقيقي.' }
     },
     platform: {
-      title: 'عقل أذكى لواجهة مطعمك',
-      desc: 'يجمع GeneGuest الحجوزات والعمليات والتسويق المدعوم بالذكاء الاصطناعي في واجهة واحدة نظيفة. يعمل بهدوء في الخلفية حتى يتمكن فريقك من التركيز على الضيوف.',
-      imageAlt: 'واجهة لوحة تحكم مطعم حديثة تعرض إدارة الطاولات في الوقت الفعلي وتدفق الحجوزات وتحليلات الضيوف'
+      title: 'عقل أذكى للمطعم',
+      desc: 'يجمع GeneGuest الحجوزات والعمليات والتسويق في واجهة واحدة نظيفة.',
+      imageAlt: 'واجهة لوحة التحكم'
     },
     features: {
-      title: 'المميزات الأساسية',
-      f1: { title: 'حجوزات بالذكاء الاصطناعي', desc: 'قبول الحجوزات فوراً مع تأكيدات تلقائية وتذكيرات ذكية.', imageAlt: 'تقويم حجز مدعوم بالذكاء الاصطناعي مع تأكيدات حجز تلقائية ونظام جدولة ذكي' },
-      f2: { title: 'توزيع طاولات ذكي', desc: 'دع النظام يختار الترتيب الأمثل للجلوس في الوقت الفعلي.', imageAlt: 'مخطط أرضي تفاعلي للمطعم مع تعيينات طاولات مقترحة بالذكاء الاصطناعي وتصور إشغال في الوقت الفعلي' },
-      f3: { title: 'رؤى العملاء', desc: 'تتبع تاريخ الزيارات والتفضيلات والتفاعل.', imageAlt: 'لوحة تحكم ملف تعريف الضيف تعرض تاريخ الزيارات وتفضيلات تناول الطعام والتوصيات الشخصية' },
-      f4: { title: 'توقع الإشغال', desc: 'اعرف مدى انشغالك قبل بدء الخدمة حتى.', imageAlt: 'رسم بياني تحليلي تنبؤي يوضح الإشغال المتوقع للمطعم وساعات الذروة للخدمة القادمة' }
+      title: 'كل ما تحتاجه',
+      f1: { title: 'حجوزات آلية', desc: 'قبول الحجوزات فوراً مع تأكيدات وتذكيرات ذكية.' },
+      f2: { title: 'توزيع ذكي', desc: 'توزيع أمثل للطاولات في الوقت الفعلي.' },
+      f3: { title: 'رؤى العملاء', desc: 'تتبع تاريخ الزيارات والتفضيلات تلقائياً.' },
+      f4: { title: 'توقع الإشغال', desc: 'اعرف مدى انشغالك قبل بدء الخدمة.' }
     },
     ads: {
       title: 'وكيل الإعلانات الذكي',
-      subtitle: 'مسوق مطعمك، مدعوم بالذكاء الاصطناعي',
-      desc: 'ينشئ وكيل الإعلانات الذكي إعلاناتك ويديرها ويحسنها تلقائياً — لتملأ دائماً المقاعد الصحيحة في الوقت المناسب.',
-      chip1: 'استهداف تلقائي للجمهور',
-      chip2: 'توليد العروض',
-      chip3: 'تحسين الحملات',
-      chip4: 'ملخصات أسبوعية',
-      imageAlt: 'لوحة معلومات تسويقية بالذكاء الاصطناعي تعرض حملات إعلانية آلية واستهداف الجمهور ومقاييس الأداء'
+      subtitle: 'خبير تسويق 24/7',
+      desc: 'ينشئ وكيل الإعلانات الذكي إعلاناتك ويديرها ويحسنها تلقائياً.',
+      chip1: 'استهداف آلي',
+      chip2: 'توليد إبداعي',
+      chip3: 'تتبع العائد',
+      chip4: 'تقارير أسبوعية',
     },
     preview: {
-  title: 'أهم مميزات وكيل الإعلانات الذكي',
-  mock1: { 
-    title: 'استهداف ذكي للجمهور',
-    alt: 'نظام ذكاء اصطناعي يختار الشرائح المثالية للعملاء حسب نوع المطعم وسلوكهم' 
-  },
-  mock2: { 
-    title: 'إنشاء الحملات تلقائياً',
-    alt: 'الذكاء الاصطناعي ينشئ إعلانات جاهزة مع نصوص وتصاميم وأهداف محسّنة' 
-  },
-  mock3: { 
-    title: 'تحسين لحظي للأداء',
-    alt: 'لوحة أداء مباشرة تُظهر التعديلات التلقائية ورفع العائد من الإعلانات' 
-  }
-}
-,
+      title: 'لماذا يفضلون الوكيل الذكي',
+      goldFeatures: [
+        { title: 'استهداف فائق الدقة', desc: 'يكتشف الزبائن الأكثر احتمالاً للحجز بناءً على السلوك.' },
+        { title: 'حملات ذاتية القيادة', desc: 'إنشاء وتحسين الإعلانات والميزانية تلقائياً.' },
+        { title: 'أرباح حقيقية', desc: 'تتبع بالضبط كم دولار حققه كل إعلان من الحجوزات.' }
+      ]
+    },
     cta: {
-      title: 'مستعد لرؤية GeneGuest أثناء العمل؟',
-      desc: 'كن من الأوائل الذين يختبرون الجيل القادم من إدارة المطاعم.',
-      placeholder: 'الاسم@البريد.com',
-      button: 'انضم لقائمة الانتظار',
-      subtext: 'نحترم صندوق بريدك — تحديثات نادرة ومفيدة فقط.'
+      title: 'مستعد لتطوير مطعمك؟',
+      desc: 'انضم إلى أكثر من 500 مطعم حديث.',
+      placeholder: 'email@restaurant.com',
+      button: 'احصل على دخول مبكر',
+      subtext: 'أماكن محدودة لبرنامج البيتا.'
     },
     footer: {
       terms: 'الشروط',
@@ -224,6 +201,7 @@ export default function GeneGuestLanding() {
   const [lang, setLang] = useState('en');
   const [email, setEmail] = useState('');
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState({});
   
   const t = translations[lang];
@@ -250,485 +228,335 @@ export default function GeneGuestLanding() {
 
   const handleSubmit = () => {
     if (email && email.includes('@')) {
-      alert(`Thanks! You're on the early access list. (${email})`);
+      alert(`Thanks! Added: ${email}`);
       setEmail('');
     }
   };
 
+  // Animation Styles
+  const styles = `
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); }
+  `;
+
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-slate-50 to-white ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        .animate-in {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        .animate-scale {
-          animation: scaleIn 0.5s ease-out forwards;
-        }
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-      `}</style>
+    <div className={`min-h-screen font-sans bg-slate-50 text-slate-900 selection:bg-[#FF7A59] selection:text-white ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <style>{styles}</style>
+
+      {/* Background Elements */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-blue-100/50 rounded-full blur-[100px] opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#FF7A59]/10 rounded-full blur-[100px] opacity-40" />
+      </div>
 
       {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#043B4C] to-[#0A5160] rounded-xl flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <rect x="4" y="8" width="16" height="8" rx="2" fill="white"/>
-                </svg>
+      <header className="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <div className="flex items-center gap-2.5 group cursor-pointer">
+              <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white shadow-lg shadow-slate-900/20 transition-transform group-hover:scale-105">
+                <Zap size={20} fill="currentColor" />
               </div>
-              <strong className="text-lg">GeneGuest</strong>
+              <span className="text-xl font-bold tracking-tight text-slate-900">GeneGuest</span>
             </div>
             
-            <div className="flex items-center gap-4">
-              <a href="#features" className="hidden sm:inline text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-                {t.nav.features}
-              </a>
-              <a href="#ads" className="hidden sm:inline text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-                {t.nav.ads}
-              </a>
-              <a href="#demo" className="hidden sm:inline text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-                {t.nav.demo}
-              </a>
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#features" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">{t.nav.features}</a>
+              <a href="#ads" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">{t.nav.ads}</a>
               
-              {/* Language Switcher */}
+              <div className="h-4 w-px bg-slate-200 mx-2" />
+
+              {/* Language */}
               <div className="relative">
-                <button 
-                  onClick={() => setShowLangMenu(!showLangMenu)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors"
-                >
-                  <Globe className="w-4 h-4" />
-                  <span className="text-sm font-medium uppercase">{lang}</span>
+                <button onClick={() => setShowLangMenu(!showLangMenu)} className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 uppercase">
+                  <Globe size={14} /> {lang}
                 </button>
-                
                 {showLangMenu && (
-                  <div className="absolute top-full mt-2 right-0 bg-white rounded-lg shadow-xl border border-slate-200 py-2 min-w-[140px]">
-                    <button 
-                      onClick={() => { setLang('en'); setShowLangMenu(false); }}
-                      className={`w-full px-4 py-2 text-left hover:bg-slate-50 transition-colors ${lang === 'en' ? 'bg-slate-100 font-semibold' : ''}`}
-                    >
-                      English
-                    </button>
-                    <button 
-                      onClick={() => { setLang('fr'); setShowLangMenu(false); }}
-                      className={`w-full px-4 py-2 text-left hover:bg-slate-50 transition-colors ${lang === 'fr' ? 'bg-slate-100 font-semibold' : ''}`}
-                    >
-                      Français
-                    </button>
-                    <button 
-                      onClick={() => { setLang('ar'); setShowLangMenu(false); }}
-                      className={`w-full px-4 py-2 text-left hover:bg-slate-50 transition-colors ${lang === 'ar' ? 'bg-slate-100 font-semibold' : ''}`}
-                    >
-                      العربية
-                    </button>
+                  <div className="absolute top-full mt-4 right-0 bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[160px] animate-in z-50">
+                    {['en', 'fr', 'ar'].map(l => (
+                      <button key={l} onClick={() => { setLang(l); setShowLangMenu(false); }} className={`w-full px-4 py-2 text-left rounded-lg text-sm transition-colors ${lang === l ? 'bg-slate-100 font-semibold' : 'hover:bg-slate-50'}`}>
+                        {l === 'en' ? 'English' : l === 'fr' ? 'Français' : 'العربية'}
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>
-              
-              <button className="px-4 py-2 border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+
+              <button className="px-5 py-2.5 rounded-full text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors">
                 {t.nav.signin}
               </button>
+              <button className="px-5 py-2.5 rounded-full text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 transition-all transform hover:-translate-y-0.5">
+                {t.nav.demo}
+              </button>
             </div>
-          </nav>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6">
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 bg-white px-6 py-24 animate-in">
+          <div className="flex flex-col gap-6 text-lg font-medium text-center">
+            <a href="#features" onClick={() => setIsMenuOpen(false)}>{t.nav.features}</a>
+            <a href="#ads" onClick={() => setIsMenuOpen(false)}>{t.nav.ads}</a>
+            <hr className="border-slate-100" />
+            <button className="text-slate-900">{t.nav.signin}</button>
+            <button className="w-full py-3 bg-slate-900 text-white rounded-xl">{t.nav.demo}</button>
+          </div>
+        </div>
+      )}
+
+      <main className="relative z-10">
         {/* Hero Section */}
-        <section className="py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#AEE8D4] to-[#DFF7EE] mb-6">
-                <span className="text-sm font-bold text-[#043B4C] uppercase tracking-wide">
+        <section className="pt-20 pb-32 px-6 overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wide mb-8 animate-in">
+                  <Sparkles size={14} />
                   {t.hero.badge}
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                {t.hero.title}
-              </h1>
-              
-              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
-                {t.hero.subtitle}
-              </p>
-              
-              <div className="flex flex-wrap gap-3 mb-6">
-                <button className="px-6 py-3 bg-gradient-to-r from-[#043B4C] to-[#0A5160] text-white rounded-xl font-bold hover:shadow-lg hover:shadow-[#043B4C]/20 transition-all hover:scale-105">
-                  {t.hero.cta1}
-                </button>
-                <button className="px-6 py-3 bg-white border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-colors">
-                  {t.hero.cta2}
-                </button>
-              </div>
-              
-              <p className="text-slate-500">{t.hero.subtext}</p>
-            </div>
-            
-            {/* Hero Visual */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-3xl p-6 border border-slate-200 shadow-2xl">
-                  <img
-                    src="./reservation_preview.png"
-                    alt="AI-powered reservation dashboard preview"
-                    className="w-full h-auto rounded-2xl shadow-md"
-                  />
                 </div>
-
-                {/* Floating decorative bubbles */}
-                <div className="absolute -top-6 -left-6 w-10 h-10 bg-[#6EE7B7] rounded-full opacity-70 blur-sm" />
-                <div className="absolute -bottom-6 -right-10 w-14 h-14 bg-[#A5F3FC] rounded-full opacity-60 blur-sm" />
-                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-[#FCA5A5] rounded-full opacity-70 blur-[2px]" />
+                
+                <h1 className="text-5xl lg:text-6xl/tight font-bold text-slate-900 mb-6 animate-in delay-100">
+                  {t.hero.title}
+                </h1>
+                
+                <p className="text-lg text-slate-600 mb-10 leading-relaxed animate-in delay-200">
+                  {t.hero.subtitle}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 animate-in delay-300">
+                  <button className="px-8 py-4 bg-[#FF7A59] text-white rounded-full font-bold shadow-lg shadow-[#FF7A59]/30 hover:shadow-[#FF7A59]/40 hover:bg-[#FF6A45] transition-all hover:-translate-y-1">
+                    {t.hero.cta1}
+                  </button>
+                  <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center"><div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[6px] border-l-slate-600 border-b-[4px] border-b-transparent ml-0.5"/></div>
+                    {t.hero.cta2}
+                  </button>
+                </div>
+                <div className="mt-6 flex items-center gap-2 text-xs font-medium text-slate-400 animate-in delay-300">
+                  <Check size={14} className="text-emerald-500" /> {t.hero.subtext}
+                </div>
               </div>
-          </div>
-        </section>
 
-        {/* Problems Section */}
-        <section id="problems" className="py-20" data-animate>
-          <h3 className={`text-xl font-bold mb-8 ${isVisible.problems ? 'animate-in' : 'opacity-0'}`}>
-            {t.problems.title}
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <ProblemCard 
-              icon={<AlertCircle className="w-8 h-8" />}
-              title={t.problems.card1.title} 
-              desc={t.problems.card1.desc}
-              delay="stagger-1"
-              isVisible={isVisible.problems}
-            />
-            <ProblemCard 
-              icon={<UserX className="w-8 h-8" />}
-              title={t.problems.card2.title} 
-              desc={t.problems.card2.desc}
-              delay="stagger-2"
-              isVisible={isVisible.problems}
-            />
-            <ProblemCard 
-              icon={<TrendingDown className="w-8 h-8" />}
-              title={t.problems.card3.title} 
-              desc={t.problems.card3.desc}
-              delay="stagger-3"
-              isVisible={isVisible.problems}
-            />
-          </div>
-        </section>
-
-        {/* Platform Section */}
-        <section id="platform" className="py-20" data-animate>
-          <div className={`grid lg:grid-cols-2 gap-12 items-center ${isVisible.platform ? 'animate-in' : 'opacity-0'}`}>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">{t.platform.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-lg">{t.platform.desc}</p>
+              {/* Hero Visual */}
+              <div className="relative animate-float">
+                {/* Abstract Decor */}
+                <div className="absolute -top-12 -right-12 w-64 h-64 bg-gradient-to-br from-emerald-300 to-cyan-300 rounded-full blur-3xl opacity-30" />
+                <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-gradient-to-br from-orange-300 to-pink-300 rounded-full blur-3xl opacity-30" />
+                
+                {/* Glass Browser Window */}
+                <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-200/60 overflow-hidden backdrop-blur-sm">
+                  {/* Fake Browser Header */}
+                  <div className="h-10 bg-slate-50 border-b border-slate-100 flex items-center px-4 gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                    </div>
+                    <div className="flex-1 text-center">
+                      <div className="inline-block w-32 h-2 bg-slate-200 rounded-full opacity-50" />
+                    </div>
+                  </div>
+                  
+                  {/* Image Content */}
+                  <div className="relative aspect-[16/10] bg-slate-50 group">
+                     <img 
+                      src="./reservation_preview.png" 
+                      alt="Dashboard" 
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                    
+                    {/* Floating UI Elements */}
+                    <div className="absolute top-8 right-8 bg-white/90 backdrop-blur p-4 rounded-xl shadow-xl border border-white/50 w-48 animate-in delay-200">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-xs font-bold text-slate-600">Live Occupancy</span>
+                      </div>
+                      <div className="text-2xl font-bold text-slate-900">94%</div>
+                      <div className="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                        <div className="bg-emerald-500 h-full w-[94%]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#043B4C]/10 to-[#AEE8D4]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all" />
-              <div className="relative bg-white rounded-3xl p-2 border border-slate-200 shadow-2xl overflow-hidden">
-                <img 
+          </div>
+        </section>
+
+        {/* Problems Grid */}
+        <section id="problems" className="py-24" data-animate>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible.problems ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.problems.title}</h2>
+              <div className="h-1 w-20 bg-[#FF7A59] mx-auto rounded-full" />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { icon: AlertCircle, color: 'text-red-500', bg: 'bg-red-50', ...t.problems.card1 },
+                { icon: UserX, color: 'text-orange-500', bg: 'bg-orange-50', ...t.problems.card2 },
+                { icon: TrendingDown, color: 'text-slate-500', bg: 'bg-slate-100', ...t.problems.card3 }
+              ].map((card, i) => (
+                <div 
+                  key={i}
+                  className={`bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group ${isVisible.problems ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <div className={`w-14 h-14 ${card.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <card.icon className={`w-7 h-7 ${card.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Split Section */}
+        <section id="platform" className="py-24 bg-white relative overflow-hidden" data-animate>
+           {/* Background Grain/Grid */}
+           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+          <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className={`${isVisible.platform ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'} transition-all duration-700`}>
+                <h2 className="text-4xl font-bold text-slate-900 mb-6">{t.platform.title}</h2>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">{t.platform.desc}</p>
+                
+                <div className="space-y-4">
+                  {[t.features.f1, t.features.f2, t.features.f3].map((f, i) => (
+                    <div key={i} className="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors cursor-default">
+                      <div className="w-10 h-10 rounded-full bg-[#043B4C] flex items-center justify-center flex-shrink-0 text-white mt-1">
+                        {i === 0 ? <Calendar size={18} /> : i === 1 ? <Users size={18} /> : <MessageSquare size={18} />}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900">{f.title}</h4>
+                        <p className="text-sm text-slate-600 mt-1">{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={`relative ${isVisible.platform ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'} transition-all duration-700 delay-200`}>
+                 <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[2rem] blur-2xl opacity-20" />
+                 <img 
                   src="./dashbourd.png"
-                  alt={t.platform.imageAlt}
-                  className="w-full rounded-2xl"
+                  alt="Interface"
+                  className="relative w-full rounded-[20px] shadow-2xl border border-slate-200"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section id="features" className="py-20" data-animate>
-          <h3 className={`text-xl font-bold mb-8 text-center ${isVisible.features ? 'animate-in' : 'opacity-0'}`}>
-            {t.features.title}
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard 
-              icon={<Calendar className="w-8 h-8" />}
-              title={t.features.f1.title} 
-              desc={t.features.f1.desc}
-              imageAlt={t.features.f1.imageAlt}
-              delay="stagger-1"
-              isVisible={isVisible.features}
-              imageSrc="./aireservation.png"
-            />
-            <FeatureCard 
-              icon={<Users className="w-8 h-8" />}
-              title={t.features.f2.title} 
-              desc={t.features.f2.desc}
-              imageAlt={t.features.f2.imageAlt}
-              delay="stagger-2"
-              isVisible={isVisible.features}
-              imageSrc="./tablas_ai.png"
-            />
-            <FeatureCard 
-              icon={<MessageSquare className="w-8 h-8" />}
-              title={t.features.f3.title} 
-              desc={t.features.f3.desc}
-              imageAlt={t.features.f3.imageAlt}
-              delay="stagger-3"
-              isVisible={isVisible.features}
-              imageSrc="./guestai.png"
-            />
-            <FeatureCard 
-              icon={<BarChart3 className="w-8 h-8" />}
-              title={t.features.f4.title} 
-              desc={t.features.f4.desc}
-              imageAlt={t.features.f4.imageAlt}
-              delay="stagger-4"
-              isVisible={isVisible.features}
-              imageSrc="./occupancy_forecast.png"
-            />
-          </div>
-        </section>
- 
-        {/* AI Ads Agent */}
-        <section id="ads" className="py-20" data-animate>
-          <h2   id="preview-title" className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
-            {t.ads.title}
-          </h2>
-          <div className={`bg-gradient-to-br from-[#AEE8D4]/10 to-transparent rounded-3xl p-8 md:p-12 border border-[#AEE8D4]/20 ${isVisible.ads ? 'animate-scale' : 'opacity-0'}`}>
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#FF7A59] to-[#FF8B6D] rounded-xl flex items-center justify-center">
-                    <Target className="w-6 h-6 text-white" />
+        {/* ADS AI Section - The "Gold" Feature */}
+        <section id="ads" className="py-32 bg-[#0B1120] text-white relative overflow-hidden" data-animate>
+          {/* Dark Theme Background Effects */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#FF7A59] blur-[120px] opacity-20 rounded-full pointer-events-none" />
+          
+          <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-sm font-medium mb-8 text-[#FFAB91]">
+                <Brain size={16} /> {t.ads.subtitle}
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{t.ads.title}</h2>
+              <p className="text-xl text-slate-300 leading-relaxed">{t.ads.desc}</p>
+            </div>
+
+            {/* Gold Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {t.preview.goldFeatures.map((feat, i) => (
+                <div 
+                  key={i}
+                  className={`p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm ${isVisible.ads ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  style={{ transitionDelay: `${i * 150}ms` }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20">
+                    {i === 0 ? <Target className="text-white" /> : i === 1 ? <Zap className="text-white" /> : <LineChart className="text-white" />}
                   </div>
-                  <h4 className="text-2xl font-bold">{t.ads.subtitle}</h4>
+                  <h3 className="text-xl font-bold mb-3 text-white">{feat.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{feat.desc}</p>
                 </div>
-                <p className="text-slate-600 mb-6 text-lg leading-relaxed">{t.ads.desc}</p>
-                <div className="flex flex-wrap gap-3">
-                  <Chip text={t.ads.chip1} />
-                  <Chip text={t.ads.chip2} />
-                  <Chip text={t.ads.chip3} />
-                  <Chip text={t.ads.chip4} />
-                </div>
-              </div>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A59]/20 to-[#AEE8D4]/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all" />
-                <div className="relative bg-white rounded-2xl p-2 border border-slate-200 shadow-xl overflow-hidden">
-                  <img 
-                    src="./aiagent_ads.png"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-              </div>
+              ))}
+            </div>
+
+            {/* Integration / Preview Image */}
+            <div className="relative rounded-2xl bg-slate-800/50 border border-slate-700 p-2 md:p-4">
+               <img src="./aiagent_ads2.png" alt="AI Ads Interface" className="w-full rounded-xl shadow-2xl" />
             </div>
           </div>
         </section>
-
-        {/* Preview Section */}
-     {/* Preview Section — AI Ads Agent 3 Gold Features */}
-{/* Preview Section — AI Ads Agent (Gold style, multilingual, no images) */}
-<section id="preview" className="py-24" data-animate aria-labelledby="preview-title">
-  <div className={`${isVisible.preview ? 'animate-in' : 'opacity-0'}`}>
- <h3   className={`text-xl font-bold text-center mb-8 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
-            {t.ads.subtitle}
-          </h3>
-    
-
-    {/* Localized gold feature copy (keeps translations inside component for clarity) */}
-    {(() => {
-      const goldFeatures = {
-        en: [
-          {
-            title: 'Ultra-Precise Targeting',
-            desc: 'The AI finds the exact customers most likely to book tonight — not broad segments, but high-intent diners based on real behavior.'
-          },
-          {
-            title: 'Auto-Runs & Optimizes Campaigns',
-            desc: 'Creates ads, tests variations, and shifts budget automatically — constantly improving performance with zero manual setup.'
-          },
-          {
-            title: 'Real Revenue Insights',
-            desc: 'Tracks which ads bring actual reservations, average spend, and ROI — no more vanity metrics. Real numbers you can trust.'
-          }
-        ],
-        fr: [
-          {
-            title: 'Ciblage ultra-précis',
-            desc: 'L’IA identifie les clients les plus susceptibles de réserver ce soir — pas des segments larges, mais des clients à haute intention basés sur le comportement réel.'
-          },
-          {
-            title: 'Lance et optimise automatiquement',
-            desc: 'Crée des annonces, teste des variantes et réalloue le budget automatiquement — amélioration continue sans configuration manuelle.'
-          },
-          {
-            title: 'Insights réels sur le CA',
-            desc: 'Mesure quelles annonces génèrent des réservations, le panier moyen et le ROI — fini les métriques de vanité. Des chiffres fiables.'
-          }
-        ],
-        ar: [
-          {
-            title: 'استهداف فائق الدقة',
-            desc: 'يكتشف الذكاء الاصطناعي الزبائن الأكثر احتمالاً للحجز الليلة — ليس شرائح عامة، بل متناولين ذوي نية فعلية مبنية على السلوك الحقيقي.'
-          },
-          {
-            title: 'تشغيل وتحسين تلقائي للحملات',
-            desc: 'ينشئ الإعلانات، يختبر المتغيرات، ويعيد توزيع الميزانية تلقائياً — أداء يتحسّن باستمرار بدون إعداد يدوي.'
-          },
-          {
-            title: 'رؤى إيرادات حقيقية',
-            desc: 'يتتبّع الإعلانات التي تجلب حجوزات فعلية، ومتوسط إنفاق العملاء، والعائد على الاستثمار — لا مزيد من مقاييس المظهر. أرقام قابلة للاعتماد.'
-          }
-        ]
-      };
-      const list = goldFeatures[lang] || goldFeatures.en;
-      return (
-        <div className="grid md:grid-cols-3 gap-10 px-4 md:px-0" role="list" aria-label={t.ads.title}>
-          {/* Feature 1 */}
-          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale">
-            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
-              <Target className="w-8 h-8 text-yellow-600" aria-hidden="true" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">{list[0].title}</h3>
-            <p className="text-slate-600 leading-relaxed">{list[0].desc}</p>
-          </article>
-
-          {/* Feature 2 */}
-          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale stagger-2">
-            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
-              <Zap className="w-8 h-8 text-yellow-600" aria-hidden="true" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">{list[1].title}</h3>
-            <p className="text-slate-600 leading-relaxed">{list[1].desc}</p>
-          </article>
-
-          {/* Feature 3 */}
-          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale stagger-3">
-            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
-              <LineChart className="w-8 h-8 text-yellow-600" aria-hidden="true" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">{list[2].title}</h3>
-            <p className="text-slate-600 leading-relaxed">{list[2].desc}</p>
-          </article>
-        </div>
-      );
-    })()}
-  </div>
-</section>
-
-
 
         {/* CTA Section */}
-        <section id="cta" className="py-20">
-          <div className="bg-gradient-to-r from-[#043B4C] to-[#0A5160] rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold mb-3">{t.cta.title}</h3>
-            <p className="text-white/90 mb-8 text-lg">{t.cta.desc}</p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
-                placeholder={t.cta.placeholder}
-                className="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FF7A59] transition-shadow"
-              />
-              <button
-                onClick={handleSubmit}
-                className="px-8 py-4 bg-[#FF7A59] rounded-xl font-bold hover:bg-[#ff8b6d] transition-all hover:scale-105 whitespace-nowrap shadow-lg"
-              >
-                {t.cta.button}
-              </button>
+        <section className="py-24 px-6">
+          <div className="max-w-5xl mx-auto bg-slate-900 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{t.cta.title}</h2>
+              <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">{t.cta.desc}</p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input 
+                  type="email" 
+                  placeholder={t.cta.placeholder} 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF7A59] backdrop-blur-sm transition-all"
+                />
+                <button 
+                  onClick={handleSubmit}
+                  className="px-8 py-4 bg-[#FF7A59] hover:bg-[#FF6A45] text-white rounded-full font-bold shadow-lg shadow-[#FF7A59]/30 transition-all hover:scale-105 whitespace-nowrap"
+                >
+                  {t.cta.button}
+                </button>
+              </div>
+              <p className="text-slate-500 text-sm mt-6">{t.cta.subtext}</p>
             </div>
-            <p className="text-white/70 text-sm mt-4">{t.cta.subtext}</p>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="py-12 text-center border-t border-slate-200">
+      <footer className="bg-white border-t border-slate-200 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-600 mb-4">
-            <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.terms}</a>
-            <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.privacy}</a>
-            <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.contact}</a>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+            <div className="flex items-center gap-2">
+               <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white">
+                <Zap size={16} fill="currentColor" />
+              </div>
+              <span className="font-bold text-xl text-slate-900">GeneGuest</span>
+            </div>
+            <div className="flex gap-8 text-sm font-medium text-slate-600">
+              <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.terms}</a>
+              <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.privacy}</a>
+              <a href="#" className="hover:text-[#FF7A59] transition-colors">{t.footer.contact}</a>
+            </div>
           </div>
-          <p className="text-slate-500 text-sm">© GeneGuest 2025</p>
+          <div className="text-center text-slate-400 text-sm">
+            &copy; {new Date().getFullYear()} GeneGuest Inc. All rights reserved.
+          </div>
         </div>
       </footer>
-    </div>
-  );
-}
-
-function ProblemCard({ icon, title, desc, delay, isVisible }) {
-  return (
-    <div className={`group bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:border-[#FF7A59]/30 transition-all hover:-translate-y-2 ${isVisible ? `animate-in ${delay}` : 'opacity-0'}`}>
-      <div className="w-14 h-14 bg-gradient-to-br from-[#FF7A59]/10 to-[#FF7A59]/5 rounded-xl flex items-center justify-center text-[#FF7A59] mb-4 group-hover:scale-110 transition-transform">
-        {icon}
-      </div>
-      <h4 className="font-bold mb-2 text-lg">{title}</h4>
-      <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
-    </div>
-  );
-}
-
-function FeatureCard({ icon, title, desc, imageAlt, imageSrc, delay, isVisible }) {
-  return (
-    <div className={`group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-2 ${isVisible ? `animate-in ${delay}` : 'opacity-0'}`}>
-      <div className="relative overflow-hidden">
-        <img 
-          src={imageSrc}
-          alt={imageAlt}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#043B4C] group-hover:scale-110 transition-transform">
-          {icon}
-        </div>
-      </div>
-      <div className="p-6">
-        <h5 className="font-bold mb-2 text-lg">{title}</h5>
-        <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
-function Chip({ text }) {
-  return (
-    <span className="inline-block px-4 py-2 bg-white rounded-full border border-slate-200 text-sm font-semibold hover:border-[#043B4C] hover:bg-[#043B4C] hover:text-white transition-all cursor-default">
-      {text}
-    </span>
-  );
-}
-
-function MockupCard({ title, alt, color, imageSrc, delay, isVisible }) {
-  return (
-    <div className={`group ${isVisible ? `animate-in ${delay}` : 'opacity-0'}`}>
-      <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-        <div className="relative">
-          <img 
-            src={imageSrc}
-            alt={alt}
-            className="w-full aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-        <div className="p-4">
-          <h5 className="font-semibold text-slate-700">{title}</h5>
-        </div>
-      </div>
     </div>
   );
 }
