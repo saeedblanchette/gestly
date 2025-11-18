@@ -45,12 +45,22 @@ const translations = {
       chip4: 'Weekly summaries',
       imageAlt: 'AI marketing dashboard showing automated ad campaigns, audience targeting, and performance metrics for restaurant promotions'
     },
-    preview: {
-      title: 'Product Preview',
-      mock1: { title: 'Dashboard: Service at a glance', alt: 'Main dashboard view with service overview, active reservations, table status, and key performance metrics' },
-      mock2: { title: 'Smart Table Map', alt: 'Interactive floor plan with color-coded tables, guest information, and AI-powered seating recommendations' },
-      mock3: { title: 'Ads: Automated campaigns', alt: 'Marketing automation interface showing campaign performance, ad creative, and ROI analytics' }
-    },
+  preview: {
+  title: 'AI Ads Agent Highlights',
+  mock1: { 
+    title: 'Smart Audience Targeting',
+    alt: 'AI system automatically choosing ideal customer segments based on restaurant profile and behavior' 
+  },
+  mock2: { 
+    title: 'Auto-Created Campaigns',
+    alt: 'AI generating ready-to-run ads with optimized visuals, copy, and objectives' 
+  },
+  mock3: { 
+    title: 'Real-Time Optimization',
+    alt: 'Live performance dashboard showing automatic bid adjustments and improved ROI' 
+  }
+}
+,
     cta: {
       title: 'Ready to see GeneGuest in action?',
       desc: 'Be the first to experience the next generation of restaurant management.',
@@ -107,12 +117,22 @@ const translations = {
       chip4: 'Résumés hebdomadaires',
       imageAlt: 'Tableau de bord marketing IA montrant les campagnes publicitaires automatisées, le ciblage d audience et les métriques de performance'
     },
-    preview: {
-      title: 'Aperçu du Produit',
-      mock1: { title: 'Tableau de bord: Service en un coup d oeil', alt: 'Vue principale du tableau de bord avec aperçu du service, réservations actives, statut des tables et métriques clés' },
-      mock2: { title: 'Plan de Tables Intelligent', alt: 'Plan d étage interactif avec tables codées par couleur, informations sur les clients et recommandations de placement par IA' },
-      mock3: { title: 'Pubs: Campagnes automatisées', alt: 'Interface d automatisation marketing montrant les performances de campagne, les créations publicitaires et les analyses de ROI' }
-    },
+preview: {
+  title: 'Points Forts de l’Agent Pub IA',
+  mock1: { 
+    title: 'Ciblage Intelligent des Audiences',
+    alt: 'Système IA sélectionnant automatiquement les segments clients idéaux selon le profil du restaurant' 
+  },
+  mock2: { 
+    title: 'Campagnes Créées Automatiquement',
+    alt: 'IA générant des publicités prêtes à lancer avec visuels et textes optimisés' 
+  },
+  mock3: { 
+    title: 'Optimisation en Temps Réel',
+    alt: 'Tableau de performance montrant les ajustements automatiques et l’amélioration du ROI' 
+  }
+}
+,
     cta: {
       title: 'Prêt à voir GeneGuest en action?',
       desc: 'Soyez parmi les premiers à découvrir la nouvelle génération de gestion de restaurant.',
@@ -170,11 +190,21 @@ const translations = {
       imageAlt: 'لوحة معلومات تسويقية بالذكاء الاصطناعي تعرض حملات إعلانية آلية واستهداف الجمهور ومقاييس الأداء'
     },
     preview: {
-      title: 'معاينة المنتج',
-      mock1: { title: 'لوحة التحكم: الخدمة في لمحة', alt: 'عرض لوحة التحكم الرئيسية مع نظرة عامة على الخدمة والحجوزات النشطة وحالة الطاولة ومقاييس الأداء الرئيسية' },
-      mock2: { title: 'خريطة الطاولات الذكية', alt: 'مخطط أرضي تفاعلي مع طاولات مرمزة بالألوان ومعلومات الضيوف وتوصيات جلوس مدعومة بالذكاء الاصطناعي' },
-      mock3: { title: 'الإعلانات: حملات آلية', alt: 'واجهة أتمتة التسويق تعرض أداء الحملة والمواد الإبداعية الإعلانية وتحليلات عائد الاستثمار' }
-    },
+  title: 'أهم مميزات وكيل الإعلانات الذكي',
+  mock1: { 
+    title: 'استهداف ذكي للجمهور',
+    alt: 'نظام ذكاء اصطناعي يختار الشرائح المثالية للعملاء حسب نوع المطعم وسلوكهم' 
+  },
+  mock2: { 
+    title: 'إنشاء الحملات تلقائياً',
+    alt: 'الذكاء الاصطناعي ينشئ إعلانات جاهزة مع نصوص وتصاميم وأهداف محسّنة' 
+  },
+  mock3: { 
+    title: 'تحسين لحظي للأداء',
+    alt: 'لوحة أداء مباشرة تُظهر التعديلات التلقائية ورفع العائد من الإعلانات' 
+  }
+}
+,
     cta: {
       title: 'مستعد لرؤية GeneGuest أثناء العمل؟',
       desc: 'كن من الأوائل الذين يختبرون الجيل القادم من إدارة المطاعم.',
@@ -482,12 +512,12 @@ export default function GeneGuestLanding() {
             />
           </div>
         </section>
-
+ 
         {/* AI Ads Agent */}
         <section id="ads" className="py-20" data-animate>
-          <h3 className={`text-xl font-bold mb-8 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
+          <h2   id="preview-title" className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isVisible.ads ? 'animate-in' : 'opacity-0'}`}>
             {t.ads.title}
-          </h3>
+          </h2>
           <div className={`bg-gradient-to-br from-[#AEE8D4]/10 to-transparent rounded-3xl p-8 md:p-12 border border-[#AEE8D4]/20 ${isVisible.ads ? 'animate-scale' : 'opacity-0'}`}>
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
@@ -509,8 +539,7 @@ export default function GeneGuestLanding() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A59]/20 to-[#AEE8D4]/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all" />
                 <div className="relative bg-white rounded-2xl p-2 border border-slate-200 shadow-xl overflow-hidden">
                   <img 
-                    src="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%23F8FFFB'/%3E%3Crect x='30' y='30' width='250' height='150' rx='12' fill='%23AEE8D4' opacity='0.3'/%3E%3Crect x='320' y='30' width='250' height='150' rx='12' fill='%23FF7A59' opacity='0.3'/%3E%3Crect x='30' y='210' width='540' height='60' rx='8' fill='%23043B4C' opacity='0.05'/%3E%3Crect x='30' y='290' width='540' height='80' rx='8' fill='%23EDE8E3'/%3E%3Ctext x='50' y='110' font-family='system-ui' font-size='24' font-weight='600' fill='%23043B4C'%3EAd Campaign%3C/text%3E%3Ctext x='340' y='110' font-family='system-ui' font-size='24' font-weight='600' fill='%23043B4C'%3EAnalytics%3C/text%3E%3C/svg%3E"
-                    alt={t.ads.imageAlt}
+                    src="./aiagent_ads.png"
                     className="w-full rounded-xl"
                   />
                 </div>
@@ -520,37 +549,98 @@ export default function GeneGuestLanding() {
         </section>
 
         {/* Preview Section */}
-        <section id="demo" className="py-20" data-animate>
-          <h3 className={`text-xl font-bold mb-8 text-center ${isVisible.demo ? 'animate-in' : 'opacity-0'}`}>
-            {t.preview.title}
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <MockupCard 
-              title={t.preview.mock1.title}
-              alt={t.preview.mock1.alt}
-              color="#043B4C"
-              delay="stagger-1"
-              isVisible={isVisible.demo}
-              imageSrc="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%23fff'/%3E%3Crect x='20' y='20' width='560' height='80' rx='12' fill='%23043B4C' opacity='0.08'/%3E%3Crect x='20' y='120' width='270' height='250' rx='12' fill='%23AEE8D4' opacity='0.2'/%3E%3Crect x='310' y='120' width='270' height='120' rx='12' fill='%23FF7A59' opacity='0.2'/%3E%3Crect x='310' y='250' width='270' height='120' rx='12' fill='%23EDE8E3'/%3E%3Ctext x='40' y='65' font-family='system-ui' font-size='24' font-weight='600' fill='%23043B4C'%3EDashboard Overview%3C/text%3E%3C/svg%3E"
-            />
-            <MockupCard 
-              title={t.preview.mock2.title}
-              alt={t.preview.mock2.alt}
-              color="#FF7A59"
-              delay="stagger-2"
-              isVisible={isVisible.demo}
-              imageSrc="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%23fff'/%3E%3Ccircle cx='150' cy='120' r='40' fill='%23AEE8D4'/%3E%3Ccircle cx='300' cy='120' r='40' fill='%23FF7A59'/%3E%3Ccircle cx='450' cy='120' r='40' fill='%23AEE8D4'/%3E%3Crect x='100' y='200' width='100' height='80' rx='12' fill='%23EDE8E3'/%3E%3Crect x='250' y='200' width='100' height='80' rx='12' fill='%23EDE8E3'/%3E%3Crect x='400' y='200' width='100' height='80' rx='12' fill='%23EDE8E3'/%3E%3Ctext x='40' y='350' font-family='system-ui' font-size='24' font-weight='600' fill='%23FF7A59'%3EFloor Plan%3C/text%3E%3C/svg%3E"
-            />
-            <MockupCard 
-              title={t.preview.mock3.title}
-              alt={t.preview.mock3.alt}
-              color="#AEE8D4"
-              delay="stagger-3"
-              isVisible={isVisible.demo}
-              imageSrc="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%23fff'/%3E%3Crect x='20' y='20' width='280' height='180' rx='12' fill='%23AEE8D4' opacity='0.3'/%3E%3Crect x='320' y='20' width='260' height='180' rx='12' fill='%23FF7A59' opacity='0.3'/%3E%3Crect x='20' y='220' width='560' height='70' rx='8' fill='%23043B4C' opacity='0.05'/%3E%3Crect x='20' y='310' width='560' height='70' rx='8' fill='%23EDE8E3'/%3E%3Ctext x='40' y='120' font-family='system-ui' font-size='20' font-weight='600' fill='%23043B4C'%3ECampaigns%3C/text%3E%3C/svg%3E"
-            />
-          </div>
-        </section>
+     {/* Preview Section — AI Ads Agent 3 Gold Features */}
+{/* Preview Section — AI Ads Agent (Gold style, multilingual, no images) */}
+<section id="preview" className="py-24" data-animate aria-labelledby="preview-title">
+  <div className={`${isVisible.preview ? 'animate-in' : 'opacity-0'}`}>
+  
+
+    <p className="text-center text-lg text-slate-600 max-w-2xl mx-auto mb-16">
+      {t.ads.subtitle}
+    </p>
+
+    {/* Localized gold feature copy (keeps translations inside component for clarity) */}
+    {(() => {
+      const goldFeatures = {
+        en: [
+          {
+            title: 'Ultra-Precise Targeting',
+            desc: 'The AI finds the exact customers most likely to book tonight — not broad segments, but high-intent diners based on real behavior.'
+          },
+          {
+            title: 'Auto-Runs & Optimizes Campaigns',
+            desc: 'Creates ads, tests variations, and shifts budget automatically — constantly improving performance with zero manual setup.'
+          },
+          {
+            title: 'Real Revenue Insights',
+            desc: 'Tracks which ads bring actual reservations, average spend, and ROI — no more vanity metrics. Real numbers you can trust.'
+          }
+        ],
+        fr: [
+          {
+            title: 'Ciblage ultra-précis',
+            desc: 'L’IA identifie les clients les plus susceptibles de réserver ce soir — pas des segments larges, mais des clients à haute intention basés sur le comportement réel.'
+          },
+          {
+            title: 'Lance et optimise automatiquement',
+            desc: 'Crée des annonces, teste des variantes et réalloue le budget automatiquement — amélioration continue sans configuration manuelle.'
+          },
+          {
+            title: 'Insights réels sur le CA',
+            desc: 'Mesure quelles annonces génèrent des réservations, le panier moyen et le ROI — fini les métriques de vanité. Des chiffres fiables.'
+          }
+        ],
+        ar: [
+          {
+            title: 'استهداف فائق الدقة',
+            desc: 'يكتشف الذكاء الاصطناعي الزبائن الأكثر احتمالاً للحجز الليلة — ليس شرائح عامة، بل متناولين ذوي نية فعلية مبنية على السلوك الحقيقي.'
+          },
+          {
+            title: 'تشغيل وتحسين تلقائي للحملات',
+            desc: 'ينشئ الإعلانات، يختبر المتغيرات، ويعيد توزيع الميزانية تلقائياً — أداء يتحسّن باستمرار بدون إعداد يدوي.'
+          },
+          {
+            title: 'رؤى إيرادات حقيقية',
+            desc: 'يتتبّع الإعلانات التي تجلب حجوزات فعلية، ومتوسط إنفاق العملاء، والعائد على الاستثمار — لا مزيد من مقاييس المظهر. أرقام قابلة للاعتماد.'
+          }
+        ]
+      };
+      const list = goldFeatures[lang] || goldFeatures.en;
+      return (
+        <div className="grid md:grid-cols-3 gap-10 px-4 md:px-0" role="list" aria-label={t.ads.title}>
+          {/* Feature 1 */}
+          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale">
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
+              <Target className="w-8 h-8 text-yellow-600" aria-hidden="true" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">{list[0].title}</h3>
+            <p className="text-slate-600 leading-relaxed">{list[0].desc}</p>
+          </article>
+
+          {/* Feature 2 */}
+          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale stagger-2">
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
+              <Zap className="w-8 h-8 text-yellow-600" aria-hidden="true" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">{list[1].title}</h3>
+            <p className="text-slate-600 leading-relaxed">{list[1].desc}</p>
+          </article>
+
+          {/* Feature 3 */}
+          <article role="listitem" className="p-8 rounded-3xl border border-yellow-300 bg-gradient-to-b from-yellow-50 to-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 animate-scale stagger-3">
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-gradient-to-br from-yellow-100 to-yellow-50">
+              <LineChart className="w-8 h-8 text-yellow-600" aria-hidden="true" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">{list[2].title}</h3>
+            <p className="text-slate-600 leading-relaxed">{list[2].desc}</p>
+          </article>
+        </div>
+      );
+    })()}
+  </div>
+</section>
+
+
 
         {/* CTA Section */}
         <section id="cta" className="py-20">
